@@ -1,28 +1,29 @@
-<div class=" contenedor-formulario">
+<div class="cont-re container">
     <div class="wrap">
-        <form name="userForm" class="formulario" ng-submit="vm.createUser()">
+        <h1 class="form-signin-heading text-muted">Registro</h1>
+        <form name="userForm" class=" formulario form-signin" ng-submit="vm.createUser()">
             <div class="text center">
-                <ul class="input-group">
-                    <label for=""></label>
-                    <input type="text" name="firstName" minlength="3" maxlength="60" ng-model="vm.user.firstName" placeholder="Nombre" required>
-                </ul>
-                <ul class="input-group">
-                    <label for=""></label>
-                    <input type="text" name="lastName" minlength="3" maxlength="60" ng-model="vm.user.lastName" placeholder=" N° documento" required>
-                </ul>
 
-                <ul class="input-group">
-                    <label for=""></label>
-                    <input type="password" name="password" minlength="3" maxlength="255" ng-model="vm.user.password" placeholder="Password" required>
-                </ul>
+
+                <input type="text" class="form-control" name="firstName" minlength="3" maxlength="60" ng-model="vm.user.firstName" placeholder="Nombre" required>
+
+
+
+                <input type="text" class="form-control" name="lastName" minlength="3" maxlength="60" ng-model="vm.user.lastName" placeholder=" N° documento" required>
+
+
+
+
+                <input type="password" class="form-control" name="password" minlength="3" maxlength="255" ng-model="vm.user.password" placeholder="Password" required>
+
                 <ul class="input-group">
                     <label for="">Rol</label>
                     <select class="Rol" ng-model="vm.user.rol.id">
                         <option value="USER">Aprendiz</option>
-                        
+
                         <option value="INS">Instructor</option>
-                    </ul>
-                <input type="submit" value="Enviar">
+                </ul>
+                  <input class="btn btn-lg btn-primary btn-block" type="submit" value="Enviar">
             </div>
         </form>
         </div>

@@ -1,19 +1,19 @@
 <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
-    <div class="container">
+    <div class="cont-nav container">
         <div class="navbar-header">
             <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
-       
+
       </button>
             <a href="/" class="navbar-brand">eventos-sas</a>
         </div>
-        <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+        <div uib-collapse="nav.isCollapsed" class=" navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
 
-                <li>
-                    <a href="" target="_self" ui-sref="usuarios-create">Registro</a>
+                <li class="nav-item">
+                    <a href="" class="link-nav" target="_self" ui-sref="usuarios-create" style="">Registro</a>
                 </li>
                 <li>
-                    <a href="" target="_self" ui-sref="login">Login</a>
+                    <a href="" class="link-nav" target="_self" ui-sref="login">Login</a>
                 </li>
             </ul>
         </div>

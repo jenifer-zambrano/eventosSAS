@@ -1,13 +1,15 @@
-<div>This is the login view.</div>
+<div id="fullscreen_bg" class="fullscreen_bg" />
 
-<h2>Login</h2>
 
-<form name="loginForm" ng-submit="vm.login()">
+<div class="cont-login container">
 
-	<label for="">Email</label>
-	<input type="text" ng-model="vm.user.email">
-	<label for="">Password</label>
-	<input type="text" ng-model="vm.user.password">
+    <form class="form-signin">
+        <h1 class="form-signin-heading text-muted">Login</h1>
+        <input type="text" class="form-control" placeholder="N° Documento" required="" autofocus="">
+        <input type="password" class="form-control" placeholder="Contraseña" required="">
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Enviar">
 
-	<button type="submit">Iniciar</button>
-</form>
+
+    </form>
+
+</div>
