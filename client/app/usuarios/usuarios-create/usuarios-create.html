@@ -1,59 +1,29 @@
-<div>This is the usuarios-create view.</div>
-<section class="Create" >
-  <form class="Create-form" name="userForm" ng-submit="userForm.$valid && vm.createUser()" novalidate>
-    <div class="Create-formTop">
-      <p class="Create-formTitle">Crea tu cuenta</p>
+<div class=" contenedor-formulario">
+    <div class="wrap">
+        <form name="userForm" class="formulario" ng-submit="vm.createUser()">
+            <div class="text center">
+                <ul class="input-group">
+                    <label for=""></label>
+                    <input type="text" name="firstName" minlength="3" maxlength="60" ng-model="vm.user.firstName" placeholder="Nombre" required>
+                </ul>
+                <ul class="input-group">
+                    <label for=""></label>
+                    <input type="text" name="lastName" minlength="3" maxlength="60" ng-model="vm.user.lastName" placeholder=" N° documento" required>
+                </ul>
+
+                <ul class="input-group">
+                    <label for=""></label>
+                    <input type="password" name="password" minlength="3" maxlength="255" ng-model="vm.user.password" placeholder="Password" required>
+                </ul>
+                <ul class="input-group">
+                    <label for="">Rol</label>
+                    <select class="Rol" ng-model="vm.user.rol.id">
+                        <option value="USER">Aprendiz</option>
+                        
+                        <option value="INS">Instructor</option>
+                    </ul>
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        </div>
     </div>
-    <div class="Create-formLeft">
-      <select class="Create-formSelect" name="typeDocument" ng-model="vm.user.documentType.id" required>
-        <option class="Create-formOption" ng-value="{{item.id}}" ng-repeat = "item in vm.typeDocument">{{item.description}}</option>
-        <option value="" disabled selected>Tipo de documento</option>
-      </select>
-      <input class="Create-formInput" name="name" type="text" ng-model="vm.user.firtsName" placeholder="Nombre"
-             ng-pattern="/^[a-zA-Z\s]*$/" required>
-      <span class="Error-formMessage" ng-show="userForm.name.$error.pattern">Este campo solo admite letras.</span>
-      <span class="Error-formMessage" ng-show="userForm.name.$touched && userForm.name.$invalid">Por favor, ingrese su nombre.</span>
-
-      <select name="departament" class="Create-formSelect" ng-model="vm.idDepartaments" ng-change="vm.getCities()">
-        <option class="Create-formOption" ng-value="{{item.id}}" ng-repeat="item in vm.departamentsList">{{item.name}}</option>
-        <option value="" disable selected>Departamento</option>
-      </select>
-
-      <select class="Create-formSelect" name="city" ng-model="vm.user.citie.id" required>
-        <option class="Create-formOption" ng-value ="{{item.id}}" ng-repeat = "item in vm.cities"> {{item.name}}</option>
-        <option value="" disabled selected>Ciudad</option>
-      </select>
-
-      <select class="Create-formSelect" placeholder="Sexo" name="genre" ng-model="vm.user.sexo">
-        <option class="Create-formOption" value="F">F</option>
-        <option class="Create-formOption" value="M">M</option>
-        <option class="Create-formOption" value="O">O</option>
-        <option value="" disabled selected>Género</option>
-      </select>
-
-    </div>
-    <div class="Create-formRight">
-      <input class="Create-formInput" name="numDocument" type="text" ng-model="vm.user.documentNumber"
-             ng-pattern="/^[0-9]*$/" minlenght="5" maxlength="15" placeholder="Numero de documento" required>
-      <span class="Error-formMessage" ng-show="userForm.numDocument.$error.pattern">Este campo solo admite numeros.</span>
-      <span class="Error-formMessage" ng-show="userForm.numDocument.$touched && userForm.numDocument.$invalid">Debe ingresar un numero de documento valido.</span>
-    <p>{{vm.mensaje}}</p>
-    <div ng-if="vm.errors.doc">
-      <p>El número de documento ya se encuentra registrado</p>
-    </div>
-
-      <input class="Create-formInput" name="lastName" type="text" ng-model="vm.user.lastName" placeholder="Apellido"
-             ng-pattern="/^[a-zA-Z\s]*$/" required>
-      <span class="Error-formMessage" ng-show="userForm.lastName.$error.pattern">Este campo solo admite letras.</span>
-      <span class="Error-formMessage" ng-show="userForm.lastName.$touched && userForm.lastName.$invalid">Por favor, ingrese su apellido.</span>
-
-      <input class="Create-formInput" name="email" type="email" ng-model="vm.user.email" placeholder="Correo electronico" required>
-      <span class="Error-formMessage" ng-show="userForm.email.$touched && userForm.email.$invalid">El email es invalido.</span>
-
-      <input class="Create-formInput" name="password" type="password" ng-model="vm.user.password" placeholder="Crea una contraseña" required>
-      <span class="Error-formMessage" ng-show="userForm.password.$touched && userForm.password.$invalid">Debe ingresar una contraseña.</span>
-
-      <button class="Create-formButton" type="submit" ng-disabled="userForm.$invalid">Crear Cuenta</button>
-    </div>
-  </form>
-</section>
