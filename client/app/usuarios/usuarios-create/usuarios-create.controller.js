@@ -4,8 +4,9 @@
 class UsuariosCreateComponent {
   constructor() {
     this.message = 'Hello';
+    this.usuariosService=usuariosService;
+
   }
-}
 
 createUser(){
   this.user.active=1;
@@ -23,10 +24,13 @@ createUser(){
     }
   });
 }
+}
+UsuariosCreateComponent.$inject = ['usuariosService'];
 angular.module('eventosSasApp')
   .component('usuariosCreate', {
     templateUrl: 'app/usuarios/usuarios-create/usuarios-create.html',
-    controller: UsuariosCreateComponent
+    controller: UsuariosCreateComponent,
+    controllerAs:'vm'
   });
 
 })();
